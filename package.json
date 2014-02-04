@@ -1,0 +1,30 @@
+{
+  "name": "rsvp-me",
+  "version": "0.1.0",
+  "description": "Get in those hard to get meetup events",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/rschmukler/rsvp-me"
+  },
+  "keywords": [
+    "rsvp",
+    "meetup"
+  ],
+  "author": "Ryan Schmukler <ryan@slingingcode.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rschmukler/rsvp-me/issues"
+  },
+  "homepage": "https://github.com/rschmukler/rsvp-me",
+  "dependencies": {
+    "superagent": "~0.16.0"
+  },
+  "devDependencies": {
+    "expect.js": "~0.2.0",
+    "mocha": "~1.17.1"
+  }
+}
