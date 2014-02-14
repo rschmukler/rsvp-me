@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/rschmukler/rsvp-me",
   "dependencies": {
-    "superagent": "~0.16.0"
+    "superagent": "~0.16.0",
+    "commander": "~2.1.0"
   },
   "devDependencies": {
     "expect.js": "~0.2.0",

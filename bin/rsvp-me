@@ -1,0 +1,12 @@
+#!/usr/bin/env node
+
+var program = require('commander');
+
+program.version(require('../package.json').version);
+
+
+program
+  .option('-a, --api-key <key>', 'specify meetup API key')
+  .option('-c, --config <path>', 'set the config path.', '~/.rsvpmerc')
+  .option('-s, --save', 'saves the config')
+  .parse(process.argv);
