@@ -16,7 +16,7 @@ program
   .option('-a, --api-key <key>', 'specify meetup API key')
   .option('-c, --config <path>', 'set the config path.', '~/.rsvpmerc')
   .option('-s, --save', 'saves the config')
-  .usage('[options] url')
+  .usage('[options] <url>')
   .parse(process.argv);
 
 if(program.config) program.config = resolvePath(program.config);
