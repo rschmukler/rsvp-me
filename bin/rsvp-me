@@ -7,6 +7,8 @@ var fs = require('fs'),
 
 var program = require('commander');
 
+var Rsvp = require('./lib/rsvp.js');
+
 program.version(require('../package.json').version);
 
 
@@ -14,6 +16,7 @@ program
   .option('-a, --api-key <key>', 'specify meetup API key')
   .option('-c, --config <path>', 'set the config path.', '~/.rsvpmerc')
   .option('-s, --save', 'saves the config')
+  .usage('[options] url')
   .parse(process.argv);
 
 if(program.config) program.config = resolvePath(program.config);
@@ -41,10 +44,24 @@ function saveConfig(cb) {
 function run() {
   if(!program.apiKey) throwError(new Error("Api Key not found in config path nor specified by -a flag"));
   if(program.save) saveConfig();
+  var url = program.args[0];
+  if(!(url && url.length)) showHelpAndQuit();
+
+  var rsvp = new Rsvp(program.apiKey, url);
+
+  rsvp.scheduleRsvp(function(err, res) {
+    if(err) throwError(err);
+    printInfo("Successfully RSVP'd to the event.");
+  });
 }
 
 
 // Some Helper methods
+
+function showHelpAndQuit() {
+  program.help();
+  process.exit(0);
+}
 
 function printInfo() {
   var args = Array.prototype.slice.call(arguments);
