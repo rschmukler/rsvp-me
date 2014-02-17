@@ -7,7 +7,7 @@ var fs = require('fs'),
 
 var program = require('commander');
 
-var Rsvp = require('./lib/rsvp.js');
+var Rsvp = require('../lib/rsvp.js');
 
 program.version(require('../package.json').version);
 
