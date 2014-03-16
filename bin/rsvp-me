@@ -22,6 +22,7 @@ program
 if(program.config) program.config = resolvePath(program.config);
 
 if(fs.existsSync(program.config) && !program.save) loadConfig(run);
+else if(program.save) saveConfig(run);
 else run();
 
 function loadConfig(cb) {
@@ -43,7 +44,7 @@ function saveConfig(cb) {
 
 function run() {
   if(!program.apiKey) throwError(new Error("Api Key not found in config path nor specified by -a flag"));
-  if(program.save) saveConfig();
+
   var url = program.args[0];
   if(!(url && url.length)) showHelpAndQuit();
 
