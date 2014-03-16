@@ -51,7 +51,7 @@ function run() {
   var rsvp = new Rsvp(program.apiKey, url);
 
   rsvp.scheduleRsvp(function(err, res) {
-    if(err) throwError(err);
+    if(err) throwError(err, res.body);
     printInfo("Successfully RSVP'd to the event.");
   });
 }
@@ -66,12 +66,13 @@ function showHelpAndQuit() {
 
 function printInfo() {
   var args = Array.prototype.slice.call(arguments);
-  var msg = '[' + chalk.green('info') + '] ' + args.shift();
+  var msg = '[' + chalk.blue('info') + '] ' + args.shift();
   console.log.apply(this, [msg].concat(args));
 }
 
-function throwError(err) {
+function throwError(err, obj) {
   console.log('[' + chalk.red('error') + '] ' + err.message);
+  if(obj) console.log("\t%j", obj);
   process.exit(1);
 }
 
