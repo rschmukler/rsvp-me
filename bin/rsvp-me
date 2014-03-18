@@ -2,8 +2,7 @@
 
 var fs = require('fs'),
     path = require('path'),
-    chalk = require('chalk'),
-    YAML = require('yaml');
+    chalk = require('chalk');
 
 var program = require('commander');
 
