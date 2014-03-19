@@ -4,6 +4,9 @@
   "description": "Get in those hard to get meetup events",
   "main": "index.js",
   "preferGlobal": true,
+  "bin": {
+    "rsvp-me": "./bin/rsvp-me"
+  },
   "scripts": {
     "test": "mocha"
   },
