@@ -1,6 +1,6 @@
 {
   "name": "rsvp-me",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Get in those hard to get meetup events",
   "main": "index.js",
   "preferGlobal": true,
