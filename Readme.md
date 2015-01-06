@@ -20,7 +20,8 @@ npm install -g rsvp-me
 
 #### Configuring API Key
 First you will need to generate a config file for `rsvp-me`. This will save your
-api key to `~/.rsvpmerc`.
+api key to `~/.rsvpmerc`. You may re-run this command as needed to save a new
+API key.
 
 ```
 rsvp-me -a <YOUR MEETUP API KEY> --save
